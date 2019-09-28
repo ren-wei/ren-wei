@@ -4,9 +4,140 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <title>任伟的博客</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    ul li {
+      list-style: none;
+    }
+    a {
+      position: relative;
+    }
+    .item {
+      float: left;
+      width: 50vw;
+      height: 50vh;
+      text-align: center;
+      line-height: 50vh;
+      font-size: 40px;
+    }
+    .item .title {
+      animation: effects-reverse 0.1s linear 0s 1 normal forwards;
+    }
+    .item:hover .title {
+      animation: effects 0.4s linear 0s 1 normal forwards;
+    }
+
+    .algorithm {
+      position: absolute;
+      height: 50vh;
+      z-index: 10;
+      top: 0vh;
+      left: 80%;
+      font-size: 20px;
+      animation: hidden-detail 0.3s linear 0s 1 normal forwards;
+    }
+    .item:hover .algorithm {
+      animation: totop 0.4s linear 0s 1 normal forwards;
+    }
+    
+    .manual {
+      position: absolute;
+      height: 50vh;
+      z-index: 10;
+      top: 50vh;
+      left: 80%;
+      font-size: 20px;
+      animation: hidden-detail 0.3s linear 0s 1 normal forwards;
+    }
+    .item:hover .manual {
+      animation: tobottom 0.4s linear 0s 1 normal forwards;
+    }
+    
+    @keyframes effects {
+      0% {
+        position: relative;
+        left: 0;
+        font-size: 40px;
+      }
+      50% {
+        font-size: 50px;
+      }
+      100% {
+        position: relative;
+        font-size: 40px;
+        left: -20%;
+      }
+    }
+    @keyframes effects-reverse {
+      0% {
+        position: relative;
+        font-size: 40px;
+        left: -20%;
+      }
+      50% {
+        font-size: 50px;
+      }
+      100% {
+        position: relative;
+        left: 0;
+        font-size: 40px;
+      }
+    }
+    @keyframes totop {
+      0% {
+        top: 100vh;
+      }
+      100% {
+        top: 0;
+      }
+    }
+    @keyframes tobottom {
+      0% {
+        top: 100vh;
+      }
+      100% {
+        top: 50vh;
+      }
+    }
+    @keyframes hidden-detail {
+      0% {
+        opacity: 1.0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+  </style>
 </head>
 <body>
-  hello
+  <div class="m-0 p-0">
+    <div class="item bg-success">
+      <div class="title text-white">博客</div>
+    </div>
+    <div class="item bg-primary">
+      <div class="title text-white">算法</div>
+      <ul class="algorithm">
+        <li><a href="./algorithm/leetcode/index.html" class="text-white">LeetCode题解</a></li>
+      </ul>
+    </div>
+    <div class="item bg-danger">
+      <div class="title text-white">数学</div>
+    </div>
+    <div class="item bg-info">
+      <div class="title text-white">参考手册</div>
+      <ul class="manual">
+        <li><a href="./manual/bootstrap/index.html" class="text-white">Bootstrap4.3.1</a></li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>
